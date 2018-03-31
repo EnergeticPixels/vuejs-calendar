@@ -17,7 +17,13 @@ var baseConfig = {
         use: [{
           loader: 'babel-loader',
           options: {
-            "presets": [ [ "es2015" ] ],
+            "presets": [ 
+              ['env', {
+                "targets": {
+                  "browsers": ["last 2 versions", "safari >= 7"]
+                }
+              }]
+            ],
             "plugins": [ "transform-es2015-destructuring", "transform-runtime" ]
           }
         }],

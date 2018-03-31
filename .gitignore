@@ -6,3 +6,5 @@ npm-debug.log
 .env
 dist
 tmp
+package-lock.json
+package-lock.json.*
