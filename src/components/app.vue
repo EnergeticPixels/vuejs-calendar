@@ -18,7 +18,7 @@
                 let currentDay = this.$moment(`${this.year}-${this.month}-1`, 'YYYY-M-D');
                 do {
                     days.push(currentDay);
-                    currentDay = this.$moment(currentDay.add(1, 'days'));
+                    currentDay = this.$moment(currentDay).add(1, 'days');
                 } while ((currentDay.month()+1) === this.month);
                 return days;
             }
