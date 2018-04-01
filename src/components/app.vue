@@ -1,13 +1,13 @@
 <template>
     <div>
         <div v-for='week in weeks'>
-            week
-            <div v-for='day in week'>{{ day }}</div>
+            <calendar-day v-for='day in week' :day='day'></calendar-day>
         </div>
     </div>
 </template>
 
 <script>
+    import CalendarDay from './calendar-day.vue';
     export default {
         data() {
             return {
@@ -64,6 +64,9 @@
                 }
                 return weeks;
             }
+        },
+        components: {
+            CalendarDay
         }
     }
 </script>
