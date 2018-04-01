@@ -10,10 +10,10 @@
     export default {
         methods: {
             inc() {
-                console.log('inked');
+                this.$store.commit('setCurrentMonth', this.month + 1)
             },
             dec() {
-
+                this.$store.commit('setCurrentMonth', this.month - 1)
             } 
         },
         computed: {
