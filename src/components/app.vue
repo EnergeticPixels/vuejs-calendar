@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div v-for='week in weeks'>
+    <div id='calendar'>
+        <div v-for='week in weeks' class='calendar-week'>
             <calendar-day v-for='day in week' :day='day'></calendar-day>
         </div>
     </div>
