@@ -20,12 +20,7 @@
                 }
             },
             events() {
-                let mockData = [
-                    { description: 'Random Event 1', date: this.$moment('2018-04-06', 'YYYY-MM-DD') },
-                    { description: 'Random Event 2', date: this.$moment('2018-04-08', 'YYYY-MM-DD') },
-                    { description: 'Random Event 3', date: this.$moment('2018-05-10', 'YYYY-MM-DD') }
-                ];
-                return mockData.filter(event => event.date.isSame(this.day, 'day'));
+                return this.$store.state.events.filter(event => event.date.isSame(this.day, 'day'));
             }
         },
         methods: {
