@@ -15,7 +15,8 @@
                     this.$store.commit('setCurrentYear', this.year + 1);
                 } else {
                     this.$store.commit('setCurrentMonth', this.month + 1)
-                }
+                };
+                this.$store.commit('eventFormActive', false)
             },
             dec() {
                 if (this.month === 1) {
@@ -23,7 +24,8 @@
                     this.$store.commit('setCurrentYear', this.year - 1);
                 } else {
                     this.$store.commit('setCurrentMonth', this.month - 1)
-                }
+                };
+                this.$store.commit('eventFormActive', false)
                 
             } 
         },
