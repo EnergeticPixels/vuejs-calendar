@@ -4,6 +4,9 @@
         <div class='text'>
             <input type='text' v-model='description' />
         </div>
+        <div class='buttons'>
+            <button @click='create'>Create</button>
+        </div>
         <button id='close-button' @click='close'>&#10005</button>
     </div>
 </template>
@@ -18,6 +21,9 @@
         methods: {
             close() {
                 this.$store.commit('eventFormActive', false);
+            },
+            create() {
+                
             }
         },
         computed: {
