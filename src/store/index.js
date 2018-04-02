@@ -17,7 +17,8 @@ export default new Vuex.Store({
             { description: 'Random Event 1', date: moment('2018-04-06', 'YYYY-MM-DD') },
             { description: 'Random Event 2', date: moment('2018-04-08', 'YYYY-MM-DD') },
             { description: 'Random Event 3', date: moment('2018-05-10', 'YYYY-MM-DD') }
-        ]
+        ],
+        eventFormDate: null
     },
     mutations: {
         setCurrentMonth(state, payload) {
@@ -36,8 +37,11 @@ export default new Vuex.Store({
         addEvent(state, payload) {
             state.events.push({
                 description: payload,
-                date: moment()
+                date: state.eventFormDate
             });
+        },
+        eventFormDate(state, payload) {
+            state.eventFormDate = payload
         }
     }
 });

@@ -23,7 +23,7 @@
                 this.$store.commit('eventFormActive', false);
             },
             create() {
-                
+                this.$store.commit('addEvent', this.description);
             }
         },
         computed: {
