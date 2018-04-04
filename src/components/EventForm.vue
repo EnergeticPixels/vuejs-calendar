@@ -8,7 +8,7 @@
         <div class='buttons'>
             <button @click='create'>Create</button>
         </div>
-        <button id='close-button' @click='close'>&#10005</button>
+        <button id='close-button' @click='close'>&#10005;</button>
     </div>
 </template>
 
@@ -24,8 +24,7 @@
                 this.$store.commit('eventFormActive', false);
             },
             create() {
-                console.log(date);
-                if (this.description.length === 0) {
+                if (this.description.length > 0) {
                     this.$store.commit('addEvent', this.description);
                     this.description = '';
                     this.$store.commit('eventFormActive', false);
