@@ -8,8 +8,11 @@ const http = require('http');
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+app.use(require('body-parser').json());
 app.post('/add_event', (req, res) => {
-  console.log('received');
+  //console.log(req.body);
+  events.push(req.body);
+  res.sendStatus(200);
 });
 
 app.get('/', (req, res) => {
@@ -17,6 +20,8 @@ app.get('/', (req, res) => {
   res.send(template);
 
 });
+
+let events = [];
 
 const server = http.createServer(app);
 
