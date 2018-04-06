@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   let template = fs.readFileSync(path.resolve('./index.html'), 'utf-8');
   let contentMarker = '<!--APP-->';
   if (renderer) {
-    renderer.renderToString({}, (err, html) => {
+    renderer.renderToString({ events }, (err, html) => {
       if (err) {
         console.log(err);
       } else {
