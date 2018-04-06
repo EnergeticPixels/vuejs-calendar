@@ -34,10 +34,10 @@
     export default {
         computed: {
             month() {
-                return this.$store.state.currentMonth;
+                return this.$store.state.currentMonth
             },
             year() {
-                return this.$store.state.currentYear;
+                return this.$store.state.currentYear
             },
             days() {
                 
