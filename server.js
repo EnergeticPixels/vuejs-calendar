@@ -34,12 +34,13 @@ app.get('/', (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(html);
+        //console.log(html);
+        res.send(template.replace(contentMarker, `<script>var __INITIAL_STATE__ = ${ serialize(events) }</script>\n${html}`));
       }
     });
-  };
-  res.send(template.replace(contentMarker, `<script>var __INITIAL_STATE__ = ${ serialize(events) }</script>`));
-
+  } else {
+    res.send('<p>Awaiting compilation</p>');
+  }
 });
 
 
